@@ -1,0 +1,98 @@
+
+div.content h1
+{
+	/*text-decoration: underline;*/
+	color: #696969;
+	font-family: cursive;
+
+
+}
+
+div.content h2
+{
+	color:#5F9EA0;
+	display: block;
+	text-indent: 30px;
+	font-family: Apple Chancery, cursive;
+	
+
+}
+
+div.content
+{
+	display: block;
+	position: relative;
+}
+
+
+p#Price
+{
+	font-size: 30px;
+	color: #555;
+}
+
+p#delivery
+{
+	font-size: 15px;
+	font-style: italic;
+	
+}
+
+
+div.content p
+{
+	font-weight: bold;
+	display: block;
+	text-indent: 30px;
+
+}
+
+div.content ul li
+{
+	text-indent: 30px;
+	font-weight: bold;
+
+}
+
+ul#compact
+{
+	text-indent: 30px;
+}
+
+div.comment p
+{
+	position:relative;
+	font-style: italic;
+	color: #696969;
+	width: 400px;
+	left: 5%;
+	bottom: 50px;
+}
+
+img#tshirtImage
+{
+	width: 25%;
+	margin-right: auto;
+	margin-left: auto;
+	/*box-shadow : 8px 8px 5px black;*/
+	float: left;
+	position: relative;
+	top: 0px;
+	right: : 900px;
+}
+
+img#logo
+{
+	width: 2%;
+	position: relative;
+	top: 0px;
+	left : 10px;
+	top: 5px;
+}
+
+h1#position
+{
+     position: relative;
+     left: 5%;
+     width: 400px
+}
