@@ -12,22 +12,6 @@
 
 <body>
 
-	<header>
-    <div id="logo"><img src="../img/logo.png" width="100" height="100"></div>
-    <div id="connect"><a href='Authentification.php'>Connexion </a></div>
-    <h1 > My TeeShirt.com </h1>
-    <nav>
-        <ul>
-        <li><a href='main.html'> Home </a></li>
-        <li><a href='TeeShirt.php'> Products </a></li>
-        <li><a href='recherche.html'> Search </a></li>
-        <li> Button 1 </li>
-        <li> Button 2 </li>
-        </ul>       
-    </nav>
-</header>
-
-
 
      	<?php 
     		try
@@ -39,7 +23,6 @@
     			die('Erreur : ' . $e -> getMessage());
     		}
     	?>
-
 
 
 <section>
@@ -73,25 +56,24 @@
 		<p id="Price">
 
 
+		<?php
 
-<?php
+		$selection = 2;
 
-$selection = 2;
+		?>
 
-?>
+		<?php
 
-<?php
+		$reponse = $bdd->prepare('SELECT Prix FROM recherche where id = ?');
+		$reponse->execute(array($selection));
 
-$reponse = $bdd->prepare('SELECT Prix FROM recherche where id = ?');
-$reponse->execute(array($selection));
+		while ($donnees = $reponse->fetch())
+		{
+		    echo $donnees['Prix'] . '$';
+		}
+		$reponse->closeCursor();
 
-while ($donnees = $reponse->fetch())
-{
-    echo $donnees['Prix'] . '$';
-}
-$reponse->closeCursor();
-
-?>
+		?>
 
 		</p>
 		<p id="delivery">
@@ -166,36 +148,8 @@ $reponse->closeCursor();
 	</div>
 </section>
 
-
-<footer>
-<div id=content>
-<div id=fMenu1>
-    <div id ="titre1"> Qui somme-nous ? </div>
-    <ul><li> Info 1 </li>
-        <li> Info 2 </li>
-        <li> Info 3 </li>
-        <li> Info 4 </li></ul>
-</div>
-
-<div id=fMenu2>
-    <div id ="titre2"> Reseaux sociaux </div>
-    <ul><li> Info 1 </li>
-        <li> Info 2 </li>
-        <li> Info 3 </li>
-        <li> Info 4 </li></ul>
-</div>
-
-<div id=fMenu3>
-    <div id ="titre3"> Menu 3 </div>
-    <ul><li> Info 1 </li>
-        <li> Info 2 </li>
-        <li> Info 3 </li>
-        <li> Info 4 </li></ul>
-</div>
-</div>
-</footer>
-<?php
-echo '<script> changeit("White"); </script>'; 
-?>
+	<?php
+	echo '<script> changeit("White"); </script>'; 
+	?>
 </body>
 </html>
