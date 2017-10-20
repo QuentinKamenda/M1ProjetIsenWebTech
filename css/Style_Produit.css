@@ -3,8 +3,7 @@ div.content h1
 {
 	/*text-decoration: underline;*/
 	color: #696969;
-	font-family: cursive;
-
+	font-family: Lucida Sans Typewriter;
 
 }
 
@@ -13,10 +12,9 @@ div.content h2
 	color:#5F9EA0;
 	display: block;
 	text-indent: 30px;
-	font-family: Apple Chancery, cursive;
-	
-
+	font-family:Lucida Sans Typewriter;
 }
+
 
 div.content
 {
@@ -29,13 +27,15 @@ p#Price
 {
 	font-size: 30px;
 	color: #555;
+	font-family:modern, monospace;
 }
 
 p#delivery
 {
-	font-size: 15px;
+	font-size: 14px;
 	font-style: italic;
-	
+	font-family:modern, monospace;
+	position: relative;
 }
 
 
@@ -51,7 +51,6 @@ div.content ul li
 {
 	text-indent: 30px;
 	font-weight: bold;
-
 }
 
 ul#compact
@@ -66,11 +65,11 @@ div.comment p
 	color: #696969;
 	width: 400px;
 	left: 5%;
-	bottom: 50px;
 }
 
 img#tshirtImage
 {
+    display : block;
 	width: 25%;
 	margin-right: auto;
 	margin-left: auto;
@@ -96,3 +95,17 @@ h1#position
      left: 5%;
      width: 400px
 }
+
+ul#menu-vertical
+{
+	    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+}
+
