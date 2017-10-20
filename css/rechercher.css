@@ -1,85 +1,30 @@
-.box h1{
-	font-size: 20px;
-}
-
-
-.colonne1 > p {
-    width: 100%;
-    height: 100%;
-    font-weight: normal;
-    font-size: 19px;
-    padding-top: 150px;
-
-}
-
-
-.colonne2 > p {
-    width: 100%;
-    height: 100%;
-    font-weight: normal;
-    font-size: 19px;
-    padding-top: 150px;
-
-}
-
-
-.colonne3 > p {
-    width: 100%;
-    height: 100%;
-    font-weight: normal;
-    font-size: 19px;
-    padding-top: 150px;
-
-}
-
-
-
-
-.colonne1 {
-  width:370px;
-  height:150px;
-  float:left;
-  margin:10px 10px 10px 10px ; 
-}
-
-.colonne2 {
-  width:370px;
-  height:150px;
-  float:left;
-  margin:10px 10px 10px 10px ; 
-}
-
-.colonne3 {
-  width:370px;
-  height:150px;
-  float:left;
-  margin:10px 10px 10px 10px ; 
-}
-
-
-
-.colonne1 :hover{
--webkit-transform: scale(1.2);
--ms-transform: scale(1.2);
-transform: scale(1.2);
-
-}
-
-.colonne2 :hover{
--webkit-transform: scale(1.2);
--ms-transform: scale(1.2);
-transform: scale(1.2);
-
-}
-
-.colonne3 :hover{
--webkit-transform: scale(1.2);
--ms-transform: scale(1.2);
-transform: scale(1.2);
-
-}
 .box{
-background-color: rgb(100,100,100);	
-width:250px;
-box-shadow: 5px 5px grey;
+	display: block;
+	text-align: center;
+}
+
+.image1{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+
+.image2{
+	display: block;
+  width: 200px;
+	height: 200px;
+	margin: 40px;
+}
+
+.text{
+	text-align: center;
+}
+
+.lig-container {
+    display: table;
+    width: 100%;
+}
+.lig {
+    display: table-cell;
+    padding: 16px;
 }
