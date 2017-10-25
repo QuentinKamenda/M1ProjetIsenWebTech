@@ -1,3 +1,5 @@
+<!-- Edited by Thomas Jaffus -->
+
 <!DOCTYPE html>
 <html>
 
@@ -5,13 +7,12 @@
 
 	<meta charset="utf-8">
 	<title> Product </title>
-	<link rel="stylesheet" type="text/css" href="../css/Style_Produit.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/StylesProduit.css"/>
 	<link rel="stylesheet" href="../css/css-template.css"/>
 
 </head>
 
 <body>
-
 
      	<?php 
     		try
@@ -24,132 +25,170 @@
     		}
     	?>
 
+<!-- Première Partie de la page -->
 
-<section>
-<div class="content">		
-	 	
+	<section class="positionPage">
+		<div class = "styleTitrePrincipal">		
 
-  	  <div id="White">
-  	  	<h1 id="position">
- 	White tee shirt
-	    </h1>
-  	  	<img id="tshirtImage" src="../img/whiteteeshirt.jpg"> 
-  	  </div>
+			<div id="Green">
+				<h1 id="position"> Green tee shirt  </h1>
+				<img id="tshirtImage" src="../img/greenteeshirt.jpg">
+		</div>
+		 
 
-	  <div id="Green">
-	  	<h1 id="position"> Green tee shirt  </h1>
-	  	<img id="tshirtImage" src="../img/greenteeshirt.jpg">
-	  </div>
+		<div class="styleTitre">
+			<h2>  Price </h2> 
+				<p id="Price">
 
+				<?php
 
-	 
-	<script>
-	  function changeit(val) {
-	    document.getElementById("White").style.display="none";
-	    document.getElementById("Green").style.display="none";
-	    document.getElementById(val).style.display="block";
-	  }
-	</script>
+				$selection = 2;
 
+				?>
 
-	<h2>  Price </h2>
-		<p id="Price">
+				<?php
 
+				$reponse = $bdd->prepare('SELECT Prix FROM recherche where id = ?');
+				$reponse->execute(array($selection));
 
-		<?php
+				while ($donnees = $reponse->fetch())
+				{
+				    echo $donnees['Prix'] . '$';
+				}
+				$reponse->closeCursor();
 
-		$selection = 2;
+				?>
+				</p>
+				<p id="delivery">
+					Free delivery from 50$ purchase
+				</p>
+				<br>
 
-		?>
+			<h2> Size : <span id="result"> </span> </h2> <br>
 
-		<?php
+				<div id="selectionTaille">
+				    <button class="styleTaille" id="XS">XS</button>
+				    <button class="styleTaille" id="S">S</button>
+				    <button class="styleTaille" id="M">M</button>
+				    <button class="styleTaille" id="L">L</button>
+				    <button class="styleTaille" id="XL">XL</button>
+				</div>
+			<br><br><br>
 
-		$reponse = $bdd->prepare('SELECT Prix FROM recherche where id = ?');
-		$reponse->execute(array($selection));
+				<script>
+				    var result = document.getElementById('result');
 
-		while ($donnees = $reponse->fetch())
-		{
-		    echo $donnees['Prix'] . '$';
-		}
-		$reponse->closeCursor();
+				    selectionTaille.addEventListener('click', function(e) {
 
-		?>
-
-		</p>
-		<p id="delivery">
-			delivery included
-		</p>
-
-	<h2> Size 
-		<select>
-		<ul id="menu-vertical">	
-			<option><li>XS</li></option>
-			<option><li>S</li></option>
-			<option><li>M</li></option>
-			<option><li>L</li></option>
-			<option><li>XL</li></option>
-		</ul>
-		</select>
-	</h2>
+				    result.innerHTML = e.target.id;
+				    });
+				</script>
 
 
-	<h2> Raw </h2>
-		<p>
-		<?php
+			<h2> Raw </h2> 
+				<div class="rawStyle">
+					<p>
+					<?php
 
-		$reponse = $bdd->prepare('SELECT Matiere FROM recherche where id = ?');
-		$reponse->execute(array($selection));
+					$reponse = $bdd->prepare('SELECT Matiere FROM recherche where id = ?');
+					$reponse->execute(array($selection));
 
-		while ($donnees = $reponse->fetch())
-		{
-		    echo $donnees['Matiere'];
-		}
-		$reponse->closeCursor();
+					while ($donnees = $reponse->fetch())
+					{
+					    echo $donnees['Matiere'];
+					}
+					$reponse->closeCursor();
 
-		?>
-		</p>
+					?>
+					</p>
+					<br>
+				</div>
 
-	<h2> Color
-  <select name="choixcouleur" onChange="changeit(this.value)">
-    <option value="White">White</option>
-    <option value="Green" selected>Green</option>
-  </select><br /><br />
-	</h2>
+			<h2> Color
+		 		
+			</h2> <br>
 	
-		<h2> Ajoutez au panier
-	    <img id="logo" src="../img/Panier.jpg">
-		</h2>
+			<button class="buttonBis"></button> &nbsp;
+			<button class="buttonBis colorButtonBis"></button>
+			<br><br><br>
+		
+			<h2>
+				<button class="buttonAchat">ADD TO BASKET</button>
+			    <img class="logo" src="../img/Panier.jpg">
+			</h2>
+			<br><br>
 
-</div>
-</section>
-	
-<section>
-<div class="comment">
-		<p>
-			guarantee <br>
-			Pleasant touch <br>
-			Machine Wash <br>
-			A good quality basic t-shirt <br>
+		</div>
 
+			<h2 class ="styleComment"> Product Information </h2>
+
+		<div class="comment">			
+			<p>
+				<img id="tailleLogo" src="../img/check.jpeg">
+					Machine Wash <br>
+				<img id="tailleLogo" src="../img/check.jpeg">
+					Made from recycled materials <br>
+				<img id="tailleLogo" src="../img/check.jpeg">
+					Made in Europe 
+			</p>
+			<br><br>
+		</div>
+
+		<h2 class ="styleComment"> Description</h2>
+			<div class="description">	
+				<p>
+					<?php
+
+					$reponse = $bdd->prepare('SELECT Description FROM recherche where id = ?');
+					$reponse->execute(array($selection));
+
+					while ($donnees = $reponse->fetch())
+					{
+					    echo $donnees['Description'];
+					}
+					$reponse->closeCursor();
+
+					?>
+				</p>
+				<br>
+			</div>
+	</section> <br>
+
+
+<!-- Deuxième Partie de la page -->
+
+	<section class="positionPagePartieDeux">
+		<div class = "styleTitreSecondaire">	
+			<br><h1> Even more to discover </h1><br>
+		</div>
+		
+		<h2 class="styleComment"> Last viewed articles </h2><br>
+			<div class="blocleft">
+				<img class="lastArticle" src="../img/image0.jpeg"> <br>
+					<p id ="Price2">Titre <br>
+					    Prix <br>
+					</p>
+				<button class="buttonDiscover"> Go to Article </button>
+			</div>
+			<div class="blocright">
+				<img class="lastArticle" src="../img/image3.jpeg"><br>
+					<p id ="Price2">Titre <br>
+					    Prix <br>
+					</p>
+				<button class="buttonDiscover"> Go to Article </button>
+			</div>
+			<div class="blocmiddle">
+				<img class="lastArticle" src="../img/image1.jpeg"><br>
+					<p id ="Price2">Titre <br>
+					    Prix <br>
+					</p>
+				<button class="buttonDiscover"> Go to Article </button>
+			</div>
+				
+
+	</section>
 		<?php
-
-		$reponse = $bdd->prepare('SELECT Description FROM recherche where id = ?');
-		$reponse->execute(array($selection));
-
-		while ($donnees = $reponse->fetch())
-		{
-		    echo $donnees['Description'];
-		}
-		$reponse->closeCursor();
-
+		echo '<script> changeit("White"); </script>'; 
 		?>
-		</p>
-
-	</div>
-</section>
-
-	<?php
-	echo '<script> changeit("White"); </script>'; 
-	?>
 </body>
 </html>
