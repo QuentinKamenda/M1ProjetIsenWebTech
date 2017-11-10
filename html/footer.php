@@ -1,5 +1,6 @@
+
 <div>
-	<footer>
+    <footer>
 
 <div id="titre_et_logo">
 <div id="titre_footer"> <h2>My Tee-Shirt.com</h2></div>
