@@ -7,12 +7,10 @@
 
 	<meta charset="utf-8">
 	<title> Product </title>
-	<link rel="stylesheet" type="text/css" href="../css/StylesProduit.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/StylesProduit2.css"/>
 	<link rel="stylesheet" href="../css/css-template.css"/>
 
 </head>
-
-<body>
 
      	<?php 
     		try
@@ -25,29 +23,54 @@
     		}
     	?>
 
+		<?php
+
+		$selection = $_GET['id'];
+
+		?>
+
 <!-- Première Partie de la page -->
 
 	<section class="positionPage">
 		<div class = "styleTitrePrincipal">		
 
-			<div id="Green">
-				<h1 id="position"> Green tee shirt  </h1>
-				<img id="tshirtImage" src="../img/greenteeshirt.jpg">
+				<!-- Titre dynamique -->
+				<h1 id="position">
+
+				<?php
+				$reponse = $bdd->prepare('SELECT Photo FROM recherche where id = ?');
+				$reponse->execute(array($selection));
+
+				while ($donnees = $reponse->fetch())
+				{
+				    echo $donnees['Photo'];
+				}
+				$reponse->closeCursor();
+				?>
+			    </h1>
+
+			    <!-- Image dynamique -->
+				<img id="tshirtImage" src=" 				
+				<?php
+				$reponse = $bdd->prepare('SELECT Lien FROM recherche where id = ?');
+				$reponse->execute(array($selection));
+
+				while ($donnees = $reponse->fetch())
+				{
+				    echo $donnees['Lien'];
+				}
+				$reponse->closeCursor();
+				?>">
 		</div>
 		 
 
 		<div class="styleTitre">
+
+			<!-- Price -->
 			<h2>  Price </h2> 
 				<p id="Price">
 
 				<?php
-
-				$selection = 2;
-
-				?>
-
-				<?php
-
 				$reponse = $bdd->prepare('SELECT Prix FROM recherche where id = ?');
 				$reponse->execute(array($selection));
 
@@ -56,7 +79,6 @@
 				    echo $donnees['Prix'] . '$';
 				}
 				$reponse->closeCursor();
-
 				?>
 				</p>
 				<p id="delivery">
@@ -64,6 +86,7 @@
 				</p>
 				<br>
 
+			<!-- Size -->
 			<h2> Size : <span id="result"> </span> </h2> <br>
 
 				<div id="selectionTaille">
@@ -77,14 +100,12 @@
 
 				<script>
 				    var result = document.getElementById('result');
-
 				    selectionTaille.addEventListener('click', function(e) {
-
 				    result.innerHTML = e.target.id;
 				    });
 				</script>
 
-
+			<!-- Raw -->
 			<h2> Raw </h2> 
 				<div class="rawStyle">
 					<p>
@@ -104,14 +125,31 @@
 					<br>
 				</div>
 
-			<h2> Color
-		 		
-			</h2> <br>
-	
-			<button class="buttonBis"></button> &nbsp;
-			<button class="buttonBis colorButtonBis"></button>
-			<br><br><br>
+			<!-- Color -->
+			<h2> Color </h2> <br>
+				<div class="rawStyle">
+					<p>
+					<?php
+
+					$reponse = $bdd->prepare('SELECT Couleur FROM recherche where id = ?');
+					$reponse->execute(array($selection));
+
+					while ($donnees = $reponse->fetch())
+					{
+					    echo $donnees['Couleur'];
+					}
+					$reponse->closeCursor();
+
+					?>
+					</p>
+					<br>
+				</div>
+
+			<!--<button class="buttonBis"></button> &nbsp;
+			<button class="buttonBis colorButtonBis"></button> 
+			<br><br><br> -->
 		
+			<!-- Add to basket -->
 			<h2>
 				<button class="buttonAchat">ADD TO BASKET</button>
 			    <img class="logo" src="../img/Panier.jpg">
@@ -120,20 +158,22 @@
 
 		</div>
 
+			<!-- Product Information -->
 			<h2 class ="styleComment"> Product Information </h2>
 
-		<div class="comment">			
-			<p>
-				<img id="tailleLogo" src="../img/check.jpeg">
-					Machine Wash <br>
-				<img id="tailleLogo" src="../img/check.jpeg">
-					Made from recycled materials <br>
-				<img id="tailleLogo" src="../img/check.jpeg">
-					Made in Europe 
-			</p>
-			<br><br>
-		</div>
+				<div class="comment">			
+					<p>
+						<img id="tailleLogo" src="../img/check.jpeg">
+							Machine Wash <br>
+						<img id="tailleLogo" src="../img/check.jpeg">
+							Made from recycled materials <br>
+						<img id="tailleLogo" src="../img/check.jpeg">
+							Made in Europe 
+					</p>
+					<br><br>
+				</div>
 
+		<!-- Description -->
 		<h2 class ="styleComment"> Description</h2>
 			<div class="description">	
 				<p>
@@ -163,29 +203,34 @@
 		</div>
 		
 		<h2 class="styleComment"> Last viewed articles </h2><br>
+
+			<!-- Image de gauche -->
 			<div class="blocleft">
-				<img class="lastArticle" src="../img/image0.jpeg"> <br>
-					<p id ="Price2">Titre <br>
-					    Prix <br>
+				<img class="lastArticle" src="../img/Tshirt/image0.jpeg"> <br>
+					<p id ="Price2"> T-shirt noir Rocker <br>
+					    14.9$ <br>
 					</p>
-				<button class="buttonDiscover"> Go to Article </button>
+				<a href="index.php?action=/TeeShirt&id=1"><button class="buttonDiscover"> Go to Article </button></a>
 			</div>
+
+			<!-- Image de droite -->
 			<div class="blocright">
-				<img class="lastArticle" src="../img/image3.jpeg"><br>
-					<p id ="Price2">Titre <br>
-					    Prix <br>
+				<img class="lastArticle" src="../img/Tshirt/image3.jpeg"><br>
+					<p id ="Price2"> Batman <br>
+					    15.9$ <br>
 					</p>
-				<button class="buttonDiscover"> Go to Article </button>
+				<a href="index.php?action=/TeeShirt&id=4"><button class="buttonDiscover"> Go to Article </button></a>
 			</div>
+
+			<!-- Image du milieu -->
 			<div class="blocmiddle">
-				<img class="lastArticle" src="../img/image1.jpeg"><br>
-					<p id ="Price2">Titre <br>
-					    Prix <br>
+				<img class="lastArticle" src="../img/Tshirt/image1.jpeg"><br>
+					<p id ="Price2"> T-shirt bleu Simple <br>
+					    15.9$ <br>
 					</p>
-				<button class="buttonDiscover"> Go to Article </button>
+				<a href="index.php?action=/TeeShirt&id=2"><button class="buttonDiscover"> Go to Article </button></a>
 			</div>
 				
-
 	</section>
 		<?php
 		echo '<script> changeit("White"); </script>'; 
