@@ -24,6 +24,11 @@ header #connect{
 
 }
 
+#blank{
+  width: 100%;
+  height: 350px;
+}
+
 .button {
 
   display: inline-block;
@@ -33,11 +38,18 @@ header #connect{
   text-align: center;
   text-decoration: none;
   outline: none;
-  color:black;
+  color: rgba(0, 0, 0, .7);
   background-color: pink;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 2px #999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .7) inset, 
+                0 -1px 0 hsl(347, 92%, 80%) inset, 
+                0 -2px 0 hsl(347, 92%, 80%) inset, 
+                0 -3px 0 hsl(347, 92%, 80%) inset, 
+                0 -4px 0 hsl(347, 92%, 80%) inset, 
+                0 -5px 0 hsl(347, 92%, 80%) inset;
+
 }
 
 
@@ -140,25 +152,6 @@ nav li a:active{
 }
 
 
-nav li a::before{
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 9px;
-    margin-left: -2px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, .5);
-}
-
-nav li a:hover::before,
-nav li a:focus::before{
-    background: white;
-    box-shadow: 0 0 2px white, 
-                0 -1px 0 rgba(0, 0, 0, .4);
-}
-
 body{  
 	
 	margin: 0px;
@@ -193,7 +186,6 @@ footer{
     border-top: 15px solid pink;
     border-top-color: :red;
 	display: flex;
-    position: fixed;
 	bottom: 0px;
     width: 100%;
 	background-color: rgb(100,100,100);

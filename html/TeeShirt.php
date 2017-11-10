@@ -1,21 +1,11 @@
 <!-- Edited by Thomas Jaffus -->
 
 <!DOCTYPE html>
-<html>
-
-<head>
-
-	<meta charset="utf-8">
-	<title> Product </title>
-	<link rel="stylesheet" type="text/css" href="../css/StylesProduit2.css"/>
-	<link rel="stylesheet" href="../css/css-template.css"/>
-
-</head>
 
      	<?php 
     		try
     		{
-    		 	$bdd = new PDO('mysql:host=localhost;dbname=teeshirt;charset=utf8', 'root', 'Isen2016'); 
+    		 	$bdd = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8', 'root', ''); 
     		}
     		catch (Exception $e)
     		{
@@ -25,7 +15,11 @@
 
 		<?php
 
-		$selection = $_GET['id'];
+		
+		if(isset($_GET['id'])){$selection=$_GET['id'];}
+		else{$selection=2;}
+		
+
 
 		?>
 
@@ -38,6 +32,7 @@
 				<h1 id="position">
 
 				<?php
+
 				$reponse = $bdd->prepare('SELECT Photo FROM recherche where id = ?');
 				$reponse->execute(array($selection));
 
@@ -235,5 +230,3 @@
 		<?php
 		echo '<script> changeit("White"); </script>'; 
 		?>
-</body>
-</html>

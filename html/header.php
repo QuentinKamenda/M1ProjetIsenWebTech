@@ -1,14 +1,14 @@
 
 
 <header>
-    <div id="logo"><a href="main.html"><img src="../img/logo.png" width="100" height="100"></a></div>
-    <div id="connect"><a href='Authentification.html'><button class="button"> Connexion</button> </a></div>
+    <div id="logo"><a href="index.php"><img src="../img/logo.png" width="100" height="100"></a></div>
+    <div id="connect"><a href='index.php?action=Authentification'><button class="button"> Connexion</button> </a></div>
     <h1> My TeeShirt.com </h1>
     <nav>
         <ul>
-        <li><a href='main.html'> Home </a></li>
-        <li><a href='TeeShirt.html'> Products </a></li>
-        <li><a href='recherche.html'> Search </a></li>
+        <li><a href='index.php'> Home </a></li>
+        <li><a href='index.php?action=TeeShirt'> Products </a></li>
+        <li><a href='index.php?action=recherche'> Search </a></li>
         
         </ul>       
     </nav>

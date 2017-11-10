@@ -3,6 +3,6 @@
 		return $_GET['action'];
 	}
 	else{
-		return 'Register';
+		return 'home';
 	}
 ?>

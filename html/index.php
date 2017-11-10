@@ -6,6 +6,8 @@
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" type="text/css" href="../css/LoginForm.css" />
 	<link rel="stylesheet" href="../css/css-template.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/StylesProduit2.css"/>
+
 </head>
 
 <body>

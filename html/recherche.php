@@ -24,9 +24,8 @@
 </div>
 
 	<?php
-    session_start();
 		try {
-			$bdd = new PDO('mysql:host=localhost;dbname=recherche;charset=utf8','root','');
+			$bdd = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','');
 		} catch (Exception $e) {
 			die('Erreur:' -$e ->getMessage());
 		}
@@ -42,8 +41,7 @@
        }
         echo '<div class="lig">';
         echo '<div class="image2">';
-        $_SESSION['var'] = $donnees['id'];
-        echo'<img src=" '.$donnees['Lien'].' " class = "image1" onclick="window.location.href=\'TeeShirt.php?id='.$donnees['id'].'\'" />'.PHP_EOL;
+         echo'<img src=" '.$donnees['Lien'].' " class = "image1" onclick="window.location.href=\'index.php?action=TeeShirt&id='.$donnees['id'].'\'" />'.PHP_EOL;
         echo '</div>';
         echo '<div class="text">';
         echo ''.$donnees['Photo'].'<br />'.PHP_EOL;
@@ -57,6 +55,7 @@
 	?>
 
 </body>
+
 
 
 </hmtl>
