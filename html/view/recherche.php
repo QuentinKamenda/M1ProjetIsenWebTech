@@ -7,7 +7,6 @@
                 </form>
     </div>
 
-
 	<?php
   generateResearch();
   ?>
