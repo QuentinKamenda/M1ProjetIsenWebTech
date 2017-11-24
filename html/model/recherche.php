@@ -1,7 +1,7 @@
 
   <?php
     try {
-      $bdd = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','Isen2016');
+      $bdd = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','');
     } catch (Exception $e) {
       die('Erreur:' -$e ->getMessage());
     }
@@ -10,7 +10,7 @@
     } else {
         $result =$bdd ->prepare("SELECT * FROM `recherche` Order By id");
     }
-    
+
 
     function generateResearch(){
       global $result,$donnees;
@@ -34,4 +34,3 @@
     $result->closeCursor();
   }
   ?>
-
