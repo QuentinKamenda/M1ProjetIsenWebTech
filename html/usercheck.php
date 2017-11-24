@@ -5,7 +5,7 @@
 
 <body>
 	<?php
-		$conn = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','');
+		$conn = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','Isen2016');
 		$req = $conn->prepare('INSERT INTO users(username,mail,password) VALUES (:username, :mail, :password)');
 	
 	$nom=htmlspecialchars($_POST['username']);

@@ -1,3 +1,10 @@
+<?php
+session_start();
+$action = include('actionCheck.php');
+if(file_exists("model/".$action.".php")){
+include("model/" .$action.".php");
+}
+?>
 <!DOCTYPE html>
 
 
@@ -7,17 +14,17 @@
 	<link rel="stylesheet" type="text/css" href="../css/LoginForm.css" />
 	<link rel="stylesheet" href="../css/css-template.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/StylesProduit2.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/rechercher.css"/>
 
 </head>
 
 <body>
 	<?php
 
-		$action = include('actionCheck.php');
 		
 		include_once('header.php');
 		
-		include($action.".php");
+		include("view/" .$action.".php");
 
 		include_once('footer.php');
 	?>

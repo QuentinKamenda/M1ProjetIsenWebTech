@@ -9,19 +9,16 @@
 
 <body>
 
-<div>
-<div class="box">
-
-		<h1>find a product</small></h1>
 
 	<div id="searchbar" >
 
-                <form action="recherche.php" class="recherche" method="get">
-                  <input class="champ" type="text" name="recherche"/>
-                  <input type="submit" value="research" />
+                <form action="index.php" class="recherche" method="get">
+                  <input type="hidden" name="action" value="recherche"/>
+                  <input type="text" name="recherche" class="searchbar"/>
+                  <input  class="buttonSearch" type="submit" value="research" />
                 </form>
     </div>
-</div>
+
 
 	<?php
 		try {
@@ -34,14 +31,17 @@
     } else {
         $result =$bdd ->prepare("SELECT * FROM `recherche` Order By id");
     }
-		$result->execute(array(0));
+		
+
+    function test(){
+    $result->execute(array(0));
 		 while ($donnees = $result->fetch()) {
        if(($donnees['id']+3)%4==0){
          echo '<div class="col-container">';
        }
         echo '<div class="lig">';
         echo '<div class="image2">';
-         echo'<img src=" '.$donnees['Lien'].' " class = "image1" onclick="window.location.href=\'index.php?action=TeeShirt&id='.$donnees['id'].'\'" />'.PHP_EOL;
+         echo'<img src=" '.$donnees['Lien'].' " class = "image1" onclick="window.location.href=\'index.php?action=/model/TeeShirt&id='.$donnees['id'].'\'" />'.PHP_EOL;
         echo '</div>';
         echo '<div class="text">';
         echo ''.$donnees['Photo'].'<br />'.PHP_EOL;
@@ -53,7 +53,7 @@
      }
     $result->closeCursor();
 	?>
-
+}
 </body>
 
 
