@@ -10,7 +10,7 @@
     } else {
         $result =$bdd ->prepare("SELECT * FROM `recherche` Order By id");
     }
-    
+
 
     function generateResearch(){
       global $result,$donnees;
@@ -34,4 +34,3 @@
     $result->closeCursor();
   }
   ?>
-
