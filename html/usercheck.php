@@ -1,9 +1,6 @@
-<DOCTYPE HTML5>
 
-<head>
-</head>
 
-<body>
+
 	<?php
 		$conn = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','');
 		$req = $conn->prepare('INSERT INTO users(username,mail,password) VALUES (:username, :mail, :password)');
@@ -26,4 +23,3 @@
 
 
 	?>
-</body>

@@ -1,14 +1,8 @@
-<DOCTYPE HTML5>
 
-
-<head>
-</head>
-
-<body>
 	<?php
-		$conn = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','Isen2016');
+		$conn = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','');
 		$req = $conn->prepare('INSERT INTO users(username,mail,password) VALUES (:username, :mail, :password)');
-	
+
 	$nom=htmlspecialchars($_POST['username']);
 	$mail=htmlspecialchars($_POST['mail']);
 	$password=htmlspecialchars($_POST['pass']);
@@ -27,4 +21,3 @@
 
 
 	?>
-</body>

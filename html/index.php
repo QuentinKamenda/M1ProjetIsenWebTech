@@ -2,7 +2,7 @@
 session_start();
 $action = include('actionCheck.php');
 if(file_exists("model/".$action.".php")){
-include("model/" .$action.".php");
+  include("model/" .$action.".php");
 }
 ?>
 <!DOCTYPE html>
@@ -21,9 +21,9 @@ include("model/" .$action.".php");
 <body>
 	<?php
 
-		
+
 		include_once('header.php');
-		
+
 		include("view/" .$action.".php");
 
 		include_once('footer.php');
