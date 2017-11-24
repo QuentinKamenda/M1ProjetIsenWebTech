@@ -15,6 +15,9 @@ if(file_exists("model/".$action.".php")){
 	<link rel="stylesheet" href="../css/css-template.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/StylesProduit2.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/rechercher.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/welcome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slide.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
