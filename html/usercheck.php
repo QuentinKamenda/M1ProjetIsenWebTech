@@ -1,5 +1,5 @@
 
-
+// PAS BON C'EST LE CODE DE account.php !
 
 	<?php
 		$conn = new PDO('mysql:host=localhost;dbname=technoweb;charset=utf8','root','');

@@ -15,9 +15,13 @@
 		'mail'=> $mail,
 		'password'=> $password
 		));
+		$path = 'Authentification';
+	}
+	else{
+		$path = 'Register';
 	}
 
-	header('Location: index.php?action=Authentification');
+	header('Location: index.php?action='.$path);
 
 
 	?>
